@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changes/001-create-account-table.yaml
+  - include:
+      file: db/changelog/changes/002-create-card-table.yaml
+  - include:
+      file: db/changelog/changes/003-create-payment-table.yaml
+  - include:
+      file: db/changelog/changes/004-create-transaction-table.yaml
+  - changeSet:
+      id: 1
+      author: Lavrukhin
+      changes:
+        - sqlFile:
+            path: test-data.sql
+            relativeToChangelogFile: true

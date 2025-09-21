@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changes/01-create-product-registry.yaml
+  - include:
+      file: db/changelog/changes/02-create-payment-registry.yaml
+  - changeSet:
+      id: 1
+      author: Lavrukhin
+      changes:
+        - sqlFile:
+            path: test-data.sql
+            relativeToChangelogFile: true
