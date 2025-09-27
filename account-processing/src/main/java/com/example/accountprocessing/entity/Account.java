@@ -41,6 +41,14 @@ public class Account {
     @Column(nullable = false)
     private AccountStatus status;
 
+    public boolean isBlocked() {
+        if (status == AccountStatus.BLOCKED) {
+            return true;
+        }else  {
+            return false;
+        }
+    }
+
     public enum AccountStatus {
         ACTIVE,
         CLOSED,

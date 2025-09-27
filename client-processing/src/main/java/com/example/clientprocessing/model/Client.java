@@ -38,7 +38,7 @@ public class Client {
     @Column(name = "document_type", nullable = false)
     private DocumentType documentType;
 
-    @Column(name = "documen_id", nullable = false)
+    @Column(name = "document_id", nullable = false)
     private String documentId;
 
     @Column(name = "document_prefix")
@@ -47,9 +47,5 @@ public class Client {
     @Column(name = "document_suffix")
     private String documentSuffix;
 
-    public enum DocumentType {
-        PASSPORT,
-        INT_PASSPORT,
-        BIRTH_CERT
-    }
+
 }

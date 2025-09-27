@@ -27,7 +27,7 @@ public class Transaction {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "type", nullable = false)
-    private TransactionType type;
+    private TransactionType type = TransactionType.OTHER;
 
     @Column(name = "amount", nullable = false)
     private BigDecimal amount;

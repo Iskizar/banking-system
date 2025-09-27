@@ -7,6 +7,10 @@ databaseChangeLog:
       file: db/changelog/changes/03-create-products.yaml
   - include:
       file: db/changelog/changes/04-create-client-products.yaml
+  - include:
+      file: db/changelog/changes/05-create-blacklist.yaml
+  - include:
+      file: db/changelog/changes/06-create-products-sequence.yaml
   - changeSet:
       id: 1
       author: Lavrukhin

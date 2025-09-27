@@ -17,15 +17,12 @@ public class ProductRegistry {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Хранится только ID клиента
     @Column(name = "client_id", nullable = false)
     private Long clientId;
 
-    // Хранится только ID аккаунта
     @Column(name = "account_id", nullable = false)
     private Long accountId;
 
-    // Хранится только ID продукта
     @Column(name = "product_id", nullable = false)
     private Long productId;
 
@@ -35,13 +32,17 @@ public class ProductRegistry {
     @Column(name = "open_date", nullable = false)
     private LocalDate openDate;
 
+    @Column(name = "month_count", nullable = false)
+    private Integer monthCount;
+
     public ProductRegistry() {}
 
-    public ProductRegistry(Long clientId, Long accountId, Long productId, BigDecimal interestRate, LocalDate openDate) {
+    public ProductRegistry(Long clientId, Long accountId, Long productId, BigDecimal interestRate, LocalDate openDate, Integer monthCount) {
         this.clientId = clientId;
         this.accountId = accountId;
         this.productId = productId;
         this.interestRate = interestRate;
         this.openDate = openDate;
+        this.monthCount = monthCount;
     }
 }
