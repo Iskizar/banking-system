@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20250925-01-create-products-sequence
+      author: you
+      changes:
+        - createSequence:
+            sequenceName: products_id_seq
+            startValue: "1"
+            incrementBy: "1"
+
+  - changeSet:
+      id: 20250925-02-fill-existing-product-ids
+      author: you
+      changes:
+        - sql:
+            dbms: postgresql
+            sql: >
+              UPDATE products
+              SET product_id = key || id
+              WHERE product_id IS NULL;
+
+  - changeSet:
+      id: 20250925-03-set-seq-start
+      author: you
+      changes:
+        - sql:
+            dbms: postgresql
+            sql: >
+              SELECT setval('products_id_seq', (SELECT COALESCE(MAX(id),0) FROM products) + 1, false);

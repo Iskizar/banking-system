@@ -1,0 +1,21 @@
+
+databaseChangeLog:
+  - changeSet:
+      id: 4
+      author: Lavrukhin
+      changes:
+        - createTable:
+            tableName: blacklist
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: document_id
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+                    unique: true
