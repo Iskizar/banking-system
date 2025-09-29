@@ -23,7 +23,10 @@ public class Transaction {
 
     // Ссылка на карту через ID
     @Column(name = "card_id")
-    private Long cardId;
+    private String  cardId;
+
+    @Column(name = "key")
+    private String key;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "type", nullable = false)

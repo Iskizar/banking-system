@@ -32,7 +32,7 @@ public class ClientTransactionsConsumer {
 
         Transaction tx = new Transaction();
         tx.setAccountId(ev.accountId);
-        tx.setCardId(Long.valueOf(ev.cardId));
+        tx.setCardId(ev.cardId);
         tx.setAmount(BigDecimal.valueOf(ev.amount));
         tx.setTimestamp(ev.timestamp.atStartOfDay());
         tx.setStatus(Transaction.TransactionStatus.PROCESSING);

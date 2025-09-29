@@ -37,3 +37,11 @@ databaseChangeLog:
               - column:
                   name: status
                   type: VARCHAR(50)
+              - column:
+                  name: blocked
+                  type: BOOLEAN
+                  defaultValueBoolean: false
+              - column:
+                  name: arrested
+                  type: BOOLEAN
+                  defaultValueBoolean: false

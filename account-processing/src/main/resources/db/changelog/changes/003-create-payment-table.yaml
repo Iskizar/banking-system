@@ -32,3 +32,16 @@ databaseChangeLog:
               - column:
                   name: type
                   type: VARCHAR(50)
+              - column:
+                  name: expired
+                  type: BOOLEAN
+                  defaultValueBoolean: false
+              - column:
+                  name: interest_rate_amount
+                  type: NUMERIC(15,2)
+              - column:
+                  name: debt_amount
+                  type: NUMERIC(15,2)
+              - column:
+                  name: payment_expiration_date
+                  type: DATE

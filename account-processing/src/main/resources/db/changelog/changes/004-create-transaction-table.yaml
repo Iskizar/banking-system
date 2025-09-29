@@ -19,7 +19,8 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: card_id
-                  type: BIGINT
+                  type: VARCHAR(50)
+
               - column:
                   name: type
                   type: VARCHAR(50)
@@ -32,3 +33,6 @@ databaseChangeLog:
               - column:
                   name: timestamp
                   type: TIMESTAMP
+              - column:
+                  name: key
+                  type: UUID

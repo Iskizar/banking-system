@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Setter
@@ -19,6 +20,18 @@ public class Payment {
 
     @Column(name = "account_id", nullable = false)
     private Long accountId;
+
+    @Column(name = "expired")
+    private Boolean expired;
+
+    @Column(name = "interest_rate_amount")
+    private BigDecimal interestRateAmount;
+
+    @Column(name = "debt_amount")
+    private BigDecimal debtAmount;
+
+    @Column(name = "payment_expiration_date")
+    private LocalDate paymentExpirationDate;
 
     @Column(name = "payment_date", nullable = false)
     private LocalDateTime paymentDate;

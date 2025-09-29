@@ -22,6 +22,9 @@ public class Account {
     @Column(name = "client_id", nullable = false)
     private Long clientId;
 
+    @Column(name = "is_recalc")
+    private Boolean isRecalc;
+
     @Column(name = "product_id", nullable = false)
     private Long productId;
 
@@ -30,9 +33,6 @@ public class Account {
 
     @Column(nullable = false)
     private BigDecimal interestRate;
-
-    @Column(nullable = false)
-    private boolean isRecalc;
 
     @Column(nullable = false)
     private boolean cardExist;
