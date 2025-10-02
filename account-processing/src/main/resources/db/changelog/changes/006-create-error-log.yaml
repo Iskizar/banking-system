@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-error-log
+      author: Lavrukhin
+      changes:
+        - createTable:
+            tableName: error_log
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: service_name
+                  type: VARCHAR(255)
+              - column:
+                  name: log_type
+                  type: VARCHAR(50)
+              - column:
+                  name: payload
+                  type: TEXT
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
