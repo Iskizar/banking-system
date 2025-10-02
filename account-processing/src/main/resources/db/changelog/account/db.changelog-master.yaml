@@ -9,6 +9,9 @@ databaseChangeLog:
       file: db/changelog/changes/004-create-transaction-table.yaml
   - include:
       file: db/changelog/changes/005-create-products-table.yaml
+  - include:
+      file: db/changelog/changes/006-create-error-log.yaml
+
   - changeSet:
       id: 1
       author: Lavrukhin

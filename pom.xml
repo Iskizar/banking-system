@@ -14,7 +14,9 @@
 		<module>client-processing</module>
 		<module>account-processing</module>
 		<module>credit-processing</module>
-	</modules>
+        <module>common-logging</module>
+        <module>common-aspects</module>
+    </modules>
 
 	<properties>
 		<java.version>24</java.version>

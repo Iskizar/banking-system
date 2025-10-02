@@ -1,6 +1,6 @@
 package com.example.accountprocessing.controller;
 
-import com.example.accountprocessing.dto.AccountMessage;
+import com.example.accountprocessing.service.TestService;
 import com.example.accountprocessing.util.JsonUtil;
 import com.example.clientprocessing.kafka.event.ClientCardEvent;
 import com.example.clientprocessing.kafka.event.ClientProductEvent;
@@ -16,11 +16,13 @@ import java.time.LocalDate;
 public class TestController {
 
     private final KafkaTemplate<String, String> kafkaTemplate;
+    private final TestService someService;
 
     private final JsonUtil jsonUtil;
 
-    public TestController(KafkaTemplate<String, String> kafkaTemplate, JsonUtil jsonUtil) {
+    public TestController(KafkaTemplate<String, String> kafkaTemplate, TestService someService, JsonUtil jsonUtil) {
         this.kafkaTemplate = kafkaTemplate;
+        this.someService = someService;
         this.jsonUtil = jsonUtil;
     }
 
@@ -69,6 +71,11 @@ public class TestController {
         kafkaTemplate.send("client_transactions", json);
 
         return "Sent to client_transactions: " + json;
+    }
+    @GetMapping("/error")
+    public String triggerError() {
+        someService.testError();
+        return "ok";
     }
 
 }
